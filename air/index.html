@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Airports</title>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="/some.css"> -->
+    <style>
+          body{
+            background-image: url(https://www.fodors.com/wire/airplane-flying.jpg);
+            background-repeat: no-repeat;
+            background-size: 1500px 750px;
+          }
+          .a, .b {
+            font-size: 20px;
+            font-weight: 100px;
+
+            width: 150px; 
+            height: 40px; 
+            border-radius: 20px;
+            border-color: rgb(255, 0, 200);
+            border-width: 5px;
+            text-align-last: center;
+            font-weight: 700;
+            color: rgb(55, 0, 255);
+            
+            background-color: rgba(182, 0, 218, 0.034);
+            transition: background-color 0.5s ease-in;
+            
+          }
+          .a:hover{
+            background-color: rgb(40, 100, 12)
+          }
+          .b:hover{
+            background-color: rgb(40, 100, 12)
+          }
+          
+          div.write{
+            position: absolute;
+            right: 37%;
+            top: 15%;
+          }
+          div.button_b{
+            position: absolute;
+            right: 38%;
+            top: 24%;
+          }
+          
+          div.fone{
+            
+            color: rgb(224, 0, 231);
+            background-color: rgba(255, 255, 255, 0.712);
+            width: 500px;
+            height: 200px; 
+            text-align: center;
+            font-size: 20px;
+            padding: 20px;
+            font-weight: 700;
+            position: absolute;
+            right: 29%;
+            top: 30%;
+          }
+          .button{
+            background-color: rgba(30, 180, 30, 0.562);
+            width: 150px; 
+            height: 30px;
+            font-size: 20px;
+            color: rgb(55, 0, 255);
+            border-radius: 8px;
+            border-color: rgb(2, 196, 2);
+            transition: border-radius 0.5s ease-in;
+            transition: background-color 0.5s ease-in;
+            
+          }
+          .button:hover{
+            border-radius: 126px;
+            background-color: rgb(40, 100, 12)
+          }
+          p1 {
+            color: green;
+          }
+          
+    </style>   
+  </head>
+  <body>
+    
+    <form action="" method="post">
+      {% csrf_token %}
+      <div class="write">
+      <input class='a' type=text name="avozy" placeholder="Write country" required autofocus center>    
+      <input class='b' type=text name="bvozy" placeholder="Write country" required autofocus>
+      <br>
+    </div>
+      <br>
+      <div class="button_b">
+      <input class="button" type="submit", value="Search" > <input class="button" type="reset" value="Clear"> 
+    </div>
+    <br>
+    </form> 
+    <div class="fone">
+      <p1>{{a}}</p1>
+        {%for k in air_0%}
+           {{"-"}}{{k}}{{"-"}}
+        {%endfor%} 
+      <br>
+
+      <br>
+    <p1>{{r}}</p1>
+      {%for k in air_1%}
+          {{"-"}}{{k}}{{"-"}}
+      {%endfor%}
+      <br>
+
+      <br>
+    <p1>{{w}}</p1>
+      {%for k in air_2%}
+          {{"-"}}{{k}}{{"-"}}
+      {%endfor%}   
+    
+      {{err}}
+    </div>
+    
+  </body>
+</html>
+
+
